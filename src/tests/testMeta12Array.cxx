@@ -40,7 +40,18 @@ int main(int, char * [])
   tObj_ascii.PrintInfo();
   tObj_binary.PrintInfo();
 
+  if(tObj.Length() != 10)
+  {
+    METAIO_STREAM::cout << "FAILED!" << METAIO_STREAM::endl;
+    return 1;
+  }
+  if(tObj.ElementType() != MET_DOUBLE)
+  {
+    METAIO_STREAM::cout << "FAILED!" << METAIO_STREAM::endl;
+    return 1;
+  }
+
   METAIO_STREAM::cout << "PASSED!" << METAIO_STREAM::endl;
 
-  return 1;
+  return 0;
   }

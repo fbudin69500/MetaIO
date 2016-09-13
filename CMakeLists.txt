@@ -49,4 +49,9 @@ else()
   set(ZLIB_LIBRARIES itkzlib)
 endif()
 
+option(BUILD_TESTING "Build the testing tree." OFF)
+if(BUILD_TESTING)
+  include(CTest)
+endif()
+
 ADD_SUBDIRECTORY( src )
